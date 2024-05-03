@@ -1,0 +1,3 @@
+@function vw($value) {
+    @return calc($value / 1920) * 100 + vw;
+}

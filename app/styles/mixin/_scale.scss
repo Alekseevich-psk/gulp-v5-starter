@@ -1,0 +1,11 @@
+@mixin scale($css, $value, $tabletValue) {
+    #{$css}: calc($value / 1920) * 100 + vw;
+
+    @include for-large {
+        #{$css}: $value + px;
+    }
+
+    @include for-tablet {
+        #{$css}: $tabletValue + px;
+    }
+}

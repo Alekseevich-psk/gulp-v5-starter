@@ -1,0 +1,7 @@
+@mixin font-size($value) {
+    font-size: calc($value / 1920) * 100 + vw;
+
+    @media(min-width: 2000px) {
+        font-size: $value + px;
+    }
+}

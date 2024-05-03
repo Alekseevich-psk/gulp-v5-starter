@@ -1,0 +1,1 @@
+// declare module 'gulp-ttf2woff';
