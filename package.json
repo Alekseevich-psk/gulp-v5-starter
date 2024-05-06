@@ -8,8 +8,9 @@
         "url": "https://github.com/Alekseevich-psk/gulp-v5-starter/issues"
     },
     "scripts": {
+        "init project": "gulp init",
+        "init project pug": "gulp init --pug",
         "start": "gulp watch",
-        "start pug": "gulp watch --pug",
         "build": "gulp build --production",
         "zipDist": "gulp zipDist",
         "ttfToWoff": "gulp ttfToWoff",

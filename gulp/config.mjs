@@ -1,16 +1,11 @@
-import yargs from "yargs/yargs";
-
-const argv = yargs(process.argv.slice(2)).option("dev", {
-    alias: "d",
-    type: "boolean",
-    describe: "dev mode",
-}).argv;
+import { hideBin } from "yargs/helpers";
 
 const app = "app/";
 const dist = "dist/";
-const onPug = true;
 
-const isProd = argv.production;
+const onPug = hideBin(process.argv)[1] === '--pug';
+
+const isProd = hideBin(process.argv)[1] === '--production';
 const isDev = !isProd;
 
 export const config = {
