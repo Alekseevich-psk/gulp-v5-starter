@@ -41,7 +41,7 @@ gulp-v5-starter
 * ```npm run start``` - запуск сервера для разработки проекта
 * ```npm run build``` - собрать проект с оптимизацией без запуска сервера
 * ```npm run zipDist``` - заархивировать dist папку (Для отправки интегратору)
-* ```npm run fontsToWoff``` - конвертация шрифтов из ttf2woff (*bug)
+* ```npm run ttfToWoff``` - конвертация шрифтов из ttf2woff (*bug)
 
 ## :point_right: Нужен SCSS без Pug?
 * Переходим в config.mjs переключаем ```const onPug``` в положение ```false```

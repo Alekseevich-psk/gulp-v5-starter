@@ -35,6 +35,7 @@ export const paths = {
         dist: dist + "/",
     },
     styles: {
+        fonts: app + "styles/fonts.scss",
         src: app + "styles/main.scss",
         watch: app + "/**/*.scss",
         dist: dist + "css/",
@@ -55,12 +56,13 @@ export const paths = {
         dist: dist + "libs/",
     },
     fonts: {
+        srcFs: app + "fonts/",
         src: app + "fonts/*.{woff,woff2}",
         watch: app + "fonts/*.{woff,woff2}",
         dist: dist + "fonts/",
     },
     ttf2Woff: {
-        src: app + "fonts/ttf/*.{otf,ttf,woff2,woff}",
+        src: app + "fonts/ttf/",
         dist: app + "fonts/",
     },
     images: {

@@ -1,13 +1,32 @@
 "use strict";
 
-import { src, dest } from "gulp";
-import { paths } from "./config.mjs";
-import ttf2woff from "gulp-ttf2woff";
-import ttf2woff2 from "gulp-ttf2woff2";
+import fs from "fs";
+import path from "path";
 
-const fontsToWoff = async () => {
-    src(paths.ttf2Woff.src).pipe(ttf2woff()).pipe(dest(paths.ttf2Woff.dist));
-    return src(paths.ttf2Woff.src).pipe(ttf2woff2()).pipe(dest(paths.ttf2Woff.dist));
+import { paths } from "./config.mjs";
+import ttf2woff from "ttf2woff";
+import ttf2woff2 from "ttf2woff2";
+
+const ttfToWoff = async () => {
+    fs.readdir(paths.ttf2Woff.src, (err, files) => {
+        files.forEach((file) => {
+            if (path.extname(file).toLowerCase() === ".ttf") {
+                const ttfBuffer = fs.readFileSync(paths.ttf2Woff.src + file);
+
+                fs.writeFileSync(
+                    paths.ttf2Woff.dist + file.replace(".ttf", ".woff"),
+                    ttf2woff(ttfBuffer)
+                );
+
+                fs.writeFileSync(
+                    paths.ttf2Woff.dist + file.replace(".ttf", ".woff2"),
+                    ttf2woff2(file)
+                );
+            }
+        });
+
+        if (err) console.log(err);
+    });
 };
 
-export default fontsToWoff;
+export default ttfToWoff;

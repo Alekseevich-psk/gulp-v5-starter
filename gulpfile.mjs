@@ -14,11 +14,13 @@ import images from "./gulp/images.mjs";
 import video from "./gulp/video.mjs";
 import fonts from "./gulp/fonts.mjs";
 import zipDist from "./gulp/zip.mjs";
-import fontsToWoff from "./gulp/ttf-woff.mjs";
+import ttfToWoff from "./gulp/ttf-woff.mjs";
+import fontsInStyle from "./gulp/fonts-in-style.mjs";
 import clean from "./gulp/clean.mjs";
 
 gulp.task(zipDist);
-gulp.task(fontsToWoff);
+gulp.task(ttfToWoff);
+gulp.task(fontsInStyle);
 
 const watchFiles = () => {
     gulpIf(
