@@ -5,6 +5,7 @@
 * Единый config.mjs
 * Небольшой вес node_modules (Только необходимое)
 * PUG опционально
+* Swiper включен в сборку
 
 ## :hammer_and_wrench: Установка
 * Установите [NodeJS](https://nodejs.org/en/)
