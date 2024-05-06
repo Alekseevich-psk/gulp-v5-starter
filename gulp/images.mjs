@@ -6,7 +6,7 @@ import browsersync from "browser-sync";
 
 const images = () => {
     return (
-        src(paths.images.src)
+        src(paths.images.src, { encoding: false })
             .pipe(dest(paths.images.dist))
             .on("end", browsersync.reload)
     );
