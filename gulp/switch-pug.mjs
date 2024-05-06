@@ -22,7 +22,7 @@ function removeFiles(startPath, filter) {
         if (stat.isDirectory()) {
             removeFiles(filename, filter);
         } else if (filename.endsWith(filter)) {
-            // fs.unlinkSync(filename);
+            fs.unlinkSync(filename);
             console.log(filename);
         }
     }
