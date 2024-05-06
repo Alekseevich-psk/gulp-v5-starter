@@ -4,6 +4,7 @@
 * Gulp v5
 * Единый config.mjs
 * Небольшой вес node_modules (Только необходимое)
+* PUG опционально
 
 ## :hammer_and_wrench: Установка
 * Установите [NodeJS](https://nodejs.org/en/)
@@ -11,6 +12,9 @@
     * [Gulp](https://gulpjs.com/): ```npm i -g gulp```
 * Скачайте сборку с помощью [Git](https://git-scm.com/downloads): ```git clone https://github.com/Alekseevich-psk/gulp-v5-starter.git```
 * Скачайте необходимые зависимости: ```npm i```
+* Выберите режим работы Pug ```npm run onPug``` или ```npm run offPug``` 
+    * Данные команды удалят ```.html``` или ```.pug``` файлы
+    * Если выключить Pug то, для конкатенации html файлов используется плагин ```gulp-file-include``` 
 * Чтобы начать работу, введите команду: ```npm run start``` (режим разработки)
 * Чтобы собрать проект, введите команду ```npm run build``` (режим сборки)
 
@@ -44,8 +48,8 @@ gulp-v5-starter
 * ```npm run ttfToWoff``` - конвертация шрифтов из ttf2woff
 * ```npm run fontsInStyle``` - подключение шрифтов в fonts.scss (Пример название шрифта: ```Montserrat-AlternatesBlack```)
 
-## :point_right: Нужен SCSS без Pug?
-* Переходим в config.mjs переключаем ```const onPug``` в положение ```false```
+## :point_right: Нюансы
+* Данную сборку использую для личных проектов, могут присутствовать наработки под быстрый старт проекта или тестовые модификации
 
 ## :yellow_heart: Нравится проект?
 Сообщайте мне о [багах](https://github.com/Alekseevich-psk/gulp-v5-starter/issues)

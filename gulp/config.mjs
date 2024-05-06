@@ -1,11 +1,10 @@
 import { hideBin } from "yargs/helpers";
+import { keyPug } from "./key-pug.mjs";
 
 const app = "app/";
 const dist = "dist/";
 
-const onPug = hideBin(process.argv)[1] === '--pug';
-
-const isProd = hideBin(process.argv)[1] === '--production';
+const isProd = hideBin(process.argv)[1] === "--production";
 const isDev = !isProd;
 
 export const config = {
@@ -13,12 +12,13 @@ export const config = {
         isDev: isDev,
         isProd: isProd,
     },
-    onPug: onPug,
+    onPug: keyPug,
 };
 
 export const paths = {
     app: app,
     dist: dist,
+    keyPug: 'gulp/key-pug.mjs',
     html: {
         src: app + "pages/*.html",
         watch: app + "pages/**/*.html",

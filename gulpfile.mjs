@@ -5,7 +5,7 @@ import { paths, config } from "./gulp/config.mjs";
 import gulp from "gulp";
 import gulpIf from "gulp-if";
 
-import init from "./gulp/init.mjs";
+import switchPug from "./gulp/switch-pug.mjs";
 import html from "./gulp/html.mjs";
 import pug from "./gulp/pug.mjs";
 import styles from "./gulp/styles.mjs";
@@ -19,8 +19,7 @@ import ttfToWoff from "./gulp/ttf-woff.mjs";
 import fontsInStyle from "./gulp/fonts-in-style.mjs";
 import clean from "./gulp/clean.mjs";
 
-
-gulp.task(init);
+gulp.task(switchPug);
 gulp.task(zipDist);
 gulp.task(ttfToWoff);
 gulp.task(fontsInStyle);
