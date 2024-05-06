@@ -9,6 +9,7 @@
     },
     "scripts": {
         "start": "gulp watch",
+        "start pug": "gulp watch --pug",
         "build": "gulp build --production",
         "zipDist": "gulp zipDist",
         "ttfToWoff": "gulp ttfToWoff",
@@ -42,12 +43,12 @@
         "pug": "^3.0.2",
         "require-dir": "^1.2.0",
         "ttf2woff": "^3.0.0",
+        "ttf2woff2": "^5.0.0",
         "webpack": "^5.91.0",
         "webpack-stream": "^7.0.0",
         "yargs": "^17.7.2"
     },
     "dependencies": {
-        "swiper": "^11.1.1",
-        "ttf2woff2": "^5.0.0"
+        "swiper": "^11.1.1"
     }
 }
