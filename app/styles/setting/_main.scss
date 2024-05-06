@@ -2,7 +2,7 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: "Geologica", Arial, Helvetica, sans-serif;
+    font-family: $fontMain, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -16,7 +16,7 @@ body {
 section {
     padding: 80px 0;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1024px) {
         padding: 50px 0;
     }
 }
@@ -30,33 +30,29 @@ sup {
 button,
 textarea,
 input {
-    font-family: "Geologica", Arial, Helvetica, sans-serif;
+    font-family: $fontMain, Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 120%;
 }
 
 a {
-    font-family: "Geologica", Arial, Helvetica, sans-serif;
+    font-family: $fontMain, Arial, Helvetica, sans-serif;
     line-height: 120%;
 }
 
 .container {
+    position: relative;
     width: 1248px;
     margin: 0 auto;
     padding: 0 16px;
     font-size: 16px;
-    position: relative;
 
     @media (max-width: 1280px) {
-        width: 1024px;
+        width: 992px;
     }
 
     @media (max-width: 1024px) {
-        width: 960px;
-    }
-
-    @media (max-width: 960px) {
         width: 768px;
     }
 

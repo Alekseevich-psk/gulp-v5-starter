@@ -1,5 +1,5 @@
 @import "./normilize/reset";
-// @import "node_modules/swiper/swiper-bundle";
+@import "node_modules/swiper/swiper-bundle";
 
 @import "./functions/z";
 @import "./functions/vw";
@@ -24,11 +24,4 @@
 @import "./elements/s-title";
 @import "./elements/sl-arrows";
 
-// @import "./../pages/components/header/header";
-// @import "./../pages/components/footer/footer";
-// @import "./../pages/components/btn-top/btn-top";
-// @import "./../pages/components/menu/menu";
-// @import "./../pages/components/popup/popup";
-// @import "./../pages/components/preloader/preloader";
-
-@import "./../pages/sections/main/main";
+// @import "./../pages/sections/main/main";
