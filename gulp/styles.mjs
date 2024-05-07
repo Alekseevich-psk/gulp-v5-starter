@@ -9,7 +9,6 @@ import gulpIf from "gulp-if";
 import groupMedia from "gulp-group-css-media-queries";
 import rename from "gulp-rename";
 import sourcemaps from "gulp-sourcemaps";
-import plumber from "gulp-plumber";
 import autoprefixer from "gulp-autoprefixer";
 import cleanCSS from "gulp-clean-css";
 import browsersync from "browser-sync";
@@ -19,7 +18,6 @@ const scss = gulpSass(nodeSass);
 const styles = () => {
     return src(paths.styles.src)
         .pipe(gulpIf(config.mode.isDev, sourcemaps.init()))
-        .pipe(plumber())
         .pipe(scss())
         .pipe(groupMedia())
         .pipe(
@@ -62,7 +60,6 @@ const styles = () => {
                 })
             )
         )
-        .pipe(plumber.stop())
         .pipe(gulpIf(config.mode.isDev, sourcemaps.write("./maps/")))
         .pipe(dest(paths.styles.dist))
         .on("end", browsersync.reload);
