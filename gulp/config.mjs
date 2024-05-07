@@ -18,7 +18,10 @@ export const config = {
 export const paths = {
     app: app,
     dist: dist,
-    keyPug: 'gulp/key-pug.mjs',
+    keyPug: "gulp/key-pug.mjs",
+    components: app + "pages/components",
+    sections: app + "pages/sections",
+    elements: app + "pages/elements",
     html: {
         src: app + "pages/*.html",
         watch: app + "pages/**/*.html",
