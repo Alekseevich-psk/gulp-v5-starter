@@ -45,11 +45,6 @@ export const paths = {
         watch: app + "/**/*.js",
         dist: dist + "js/",
     },
-    libs: {
-        src: app + "libs/libs.js",
-        watch: app + "libs/**/*.js",
-        dist: dist + "libs/",
-    },
     fonts: {
         srcFs: app + "fonts/",
         src: app + "fonts/*.{woff,woff2}",

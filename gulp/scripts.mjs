@@ -8,8 +8,7 @@ import browsersync from "browser-sync";
 
 const webpackConfig = {
     entry: {
-        main: "./" + paths.scripts.src,
-        libs: "./" + paths.libs.src
+        main: "./" + paths.scripts.src
     },
     mode: config.mode.isDev ? "development" : "production",
     output: {

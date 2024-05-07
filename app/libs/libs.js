@@ -1,1 +1,0 @@
-import swiper from "swiper";
