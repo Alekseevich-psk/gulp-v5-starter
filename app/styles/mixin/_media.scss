@@ -5,7 +5,7 @@
 }
 
 @mixin for-tablet {
-    @media (max-width: 960px) {
+    @media (max-width: 992px) {
         @content;
     }
 }
@@ -23,7 +23,7 @@
 }
 
 @mixin for-large {
-    @media(min-width: 2000px) {
+    @media(min-width: 1921px) {
         @content;
     }
 }
