@@ -32,7 +32,6 @@ gulp-v5-starter
 ├── app
 │   ├── fonts
 │   ├── images
-│   ├── libs
 │   ├── pages
 │   ├── scripts
 │   ├── styles
