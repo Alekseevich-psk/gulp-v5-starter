@@ -43,8 +43,10 @@
         "node-sass": "^9.0.0",
         "pug": "^3.0.2",
         "require-dir": "^1.2.0",
+        "ts-loader": "^9.5.1",
         "ttf2woff": "^3.0.0",
         "ttf2woff2": "^5.0.0",
+        "typescript": "^5.4.5",
         "webpack": "^5.91.0",
         "webpack-stream": "^7.0.0",
         "yargs": "^17.7.2"

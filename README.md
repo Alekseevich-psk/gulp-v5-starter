@@ -2,9 +2,12 @@
 
 ## :fire: Особенности
 * Gulp v5
-* Единый config.mjs
+* Webpack для обработки js и ts
+* Единый ```config.mjs```
 * Небольшой вес node_modules (Только необходимое)
-* PUG опционально
+* PUG опционально 
+    * (По умолчанию включен, чтобы удалить ```.html``` выполните ```npm run onPug```)
+* Импорт ```.ts .js .mjs```
 * Swiper включен в сборку
 
 ## :hammer_and_wrench: Установка
@@ -37,6 +40,7 @@ gulp-v5-starter
 ├── dist
 ├── package.json
 ├── ignore.d.ts
+├── tsconfig.json
 ├── gulpfile.mjs
 ├── README.md
 └── .gitignore

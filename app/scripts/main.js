@@ -1,1 +1,1 @@
-import './swiper.js';
+console.log('hello world!');

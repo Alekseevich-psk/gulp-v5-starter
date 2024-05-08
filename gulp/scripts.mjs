@@ -14,6 +14,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const webpackConfig = {
     entry: {
         main: "./" + paths.scripts.src,
+        ts: "./" + paths.scripts.srcTs,
     },
     mode: config.mode.isDev ? "development" : "production",
     output: {
@@ -29,6 +30,11 @@ const webpackConfig = {
     },
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                use: "ts-loader",
+                exclude: /node_modules/,
+            },
             {
                 test: /\.(?:js|mjs|cjs)$/,
                 exclude: /node_modules/,
