@@ -46,7 +46,8 @@ export const paths = {
     scripts: {
         src: app + "scripts/main.js",
         srcTs: app + "scripts/main.ts",
-        watch: app + "/**/*.js",
+        watch: app + "/**/*.{js,mjs}",
+        watchTs: app + "/**/*.ts",
         dist: dist + "js/",
     },
     fonts: {
