@@ -4,7 +4,7 @@ import { src, dest } from "gulp";
 import { paths } from "./config.mjs";
 
 const video = () => {
-    return src(paths.video.src)
+    return src(paths.video.src, { encoding: false })
             .pipe(dest(paths.video.dist));
 };
 
