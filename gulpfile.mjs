@@ -42,7 +42,7 @@ const watchFiles = () => {
 export const build = gulp.series(
     clean,
     gulpIf(config.onPug, pug, html),
-    gulp.parallel(styles, fonts, scripts, images)
+    gulp.parallel(styles, video, fonts, scripts, images)
 );
 
 export const watch = gulp.parallel(build, watchFiles, serve);
