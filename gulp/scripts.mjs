@@ -13,12 +13,18 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const webpackConfig = {
     entry: {
-        main: "./" + paths.scripts.src,
+        // main: "./" + paths.scripts.src,
         ts: "./" + paths.scripts.srcTs,
+    },
+    watch: true,
+    watchOptions: {
+        ignored: /node_modules/,
+        followSymlinks: true,
+        stdin: false,
     },
     mode: config.mode.isDev ? "development" : "production",
     output: {
-        filename: "[name].scripts.js",
+        filename: "scripts.js",
         publicPath: "/",
     },
     resolve: {
@@ -49,11 +55,20 @@ const webpackConfig = {
     },
 };
 
-const scripts = () => {
-    return src(paths.scripts.src)
-        .pipe(webpackStream(webpackConfig))
+const scriptsWatch = () => {
+    return src(paths.scripts.srcTs)
         .pipe(dest(paths.scripts.dist))
         .on("end", browsersync.reload);
 };
 
-export default scripts;
+const scripts = () => {
+    return src(paths.scripts.srcTs)
+        .pipe(webpackStream(webpackConfig), null, function (err, stats) {
+            console.log("err " + err);
+            console.log("stats " + stats);
+        })
+        .pipe(dest(paths.scripts.dist))
+        .on("end", browsersync.reload);
+};
+
+export { scripts, scriptsWatch };

@@ -6,6 +6,8 @@ const browserSync = () => {
         server: {
             baseDir: paths.dist,
         },
+        inline: false,
+        hot: true,
         port: 3000,
         notify: false,
     });
