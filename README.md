@@ -16,8 +16,9 @@
     * [Gulp](https://gulpjs.com/): ```npm i -g gulp```
 * Скачайте сборку с помощью [Git](https://git-scm.com/downloads): ```git clone https://github.com/Alekseevich-psk/gulp-v5-starter.git```
 * Скачайте необходимые зависимости: ```npm i```
-* Выберите режим работы Pug ```npm run onPug``` или ```npm run offPug``` 
+* Выберите режим работы HTML или PUG ```npm run initPUG``` или ```npm run initHTML``` 
     * Данные команды удалят ```.html``` или ```.pug``` файлы
+    * По умолчанию PUG - включен, файлы ```.html``` можно удалить вручную
     * Если выключить Pug то, для конкатенации html файлов используется плагин ```gulp-file-include``` 
 * Чтобы начать работу, введите команду: ```npm run start``` (режим разработки)
 * Чтобы собрать проект, введите команду ```npm run build``` (режим сборки)
