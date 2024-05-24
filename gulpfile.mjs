@@ -18,11 +18,13 @@ import zipDist from "./gulp/zip.mjs";
 import ttfToWoff from "./gulp/ttf-woff.mjs";
 import fontsInStyle from "./gulp/fonts-in-style.mjs";
 import clean from "./gulp/clean.mjs";
+import create from "./gulp/create.mjs";
 
 gulp.task(switchPug);
 gulp.task(zipDist);
 gulp.task(ttfToWoff);
 gulp.task(fontsInStyle);
+gulp.task(create);
 
 const watchFiles = () => {
     gulpIf(
@@ -46,3 +48,4 @@ export const build = gulp.series(
 );
 
 export const watch = gulp.parallel(build, watchFiles, serve);
+gulp.task("default", watch);
