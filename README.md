@@ -52,10 +52,10 @@ gulp-v5-starter
 
 ## :keyboard: Команды
 * ```gulp``` или ```npm run start``` - запуск сервера для разработки проекта
-* ```npm run build``` - собрать проект с оптимизацией без запуска сервера
-* ```npm run zipDist``` - заархивировать dist папку (Для отправки интегратору)
-* ```npm run ttfToWoff``` - конвертация шрифтов из ttf2woff
-* ```npm run fontsInStyle``` - подключение шрифтов в fonts.scss (Пример названия шрифта: ```Montserrat-AlternatesBlack```)
+* ```gulp build``` или ```npm run build``` - собрать проект с оптимизацией без запуска сервера
+* ```gulp zipDist``` или ```npm run zipDist``` - заархивировать dist папку (Для отправки интегратору)
+* ```gulp ttfToWoff``` или ```npm run ttfToWoff``` - конвертация шрифтов из ttf2woff
+* ```gulp fontsInStyle``` или ```npm run fontsInStyle``` - подключение шрифтов в fonts.scss (Пример названия шрифта: ```Montserrat-AlternatesBlack```)
 
 ## :point_right: Нюансы
 * Данную сборку использую для личных проектов, могут присутствовать наработки под быстрый старт проекта или тестовые модификации
