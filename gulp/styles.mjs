@@ -21,13 +21,10 @@ const styles = () => {
         .pipe(scss())
         .pipe(groupMedia())
         .pipe(
-            gulpIf(
-                config.mode.isProd,
-                autoprefixer({
-                    cascade: false,
-                    grid: true,
-                })
-            )
+            autoprefixer({
+                cascade: false,
+                grid: true,
+            })
         )
         .pipe(
             gulpIf(
@@ -49,14 +46,6 @@ const styles = () => {
                             removeUnusedAtRules: false,
                         },
                     },
-                })
-            )
-        )
-        .pipe(
-            gulpIf(
-                config.mode.isProd,
-                rename({
-                    suffix: ".min",
                 })
             )
         )
