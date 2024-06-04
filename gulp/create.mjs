@@ -30,9 +30,9 @@ const createFiles = (path, nameFile, modeJs = null) => {
 
         if (exists) {
             arrayTypeFiles.forEach((type) => {
-                const fileContent = "";
-                const dir = `${path}/${file}/${file}.${type}`;
+                const dir = `${path}/${file}/${type === "scss" ? "_" : ""}${file}.${type}`;
                 console.log(dir);
+
                 fs.writeFile(dir, "", "utf8", (err) => {
                     if (err) throw err;
                 });
