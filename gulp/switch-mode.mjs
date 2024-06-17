@@ -35,20 +35,27 @@ const successMessage = (mode, typeFiles) => {
 };
 
 const clearContentKeyFile = (pathKey) => {
-    fs.truncate(paths.keyPug, 0, function () {
+    fs.truncate(pathKey, 0, function () {
         console.log(`fs.truncate ${pathKey} - done`);
     });
 };
 
-const saveModeKey = (path, mode) => {
-    fs.appendFile(path, `export const keyPug = ${mode};`, cb);
+const saveModeKey = (path, key, mode) => {
+    fs.appendFile(path, `export const ${key} = ${mode};`, cb);
 };
 
-const saveMode = (pathApp, pathKeyMode, mode, keyMode, typeRemoveFiles) => {
+const activeMode = (
+    pathApp,
+    pathKeyMode,
+    mode,
+    nameKeyMode,
+    valueKeyMode,
+    typeRemoveFiles
+) => {
     removeFiles(pathApp, `.${typeRemoveFiles}`);
-    successMessage(mode, typeRemoveFiles);
     clearContentKeyFile(pathKeyMode);
-    saveModeKey(pathKeyMode, keyMode);
+    saveModeKey(pathKeyMode, nameKeyMode, valueKeyMode);
+    successMessage(mode, typeRemoveFiles);
 };
 
 const switchMode = async () => {
@@ -56,19 +63,19 @@ const switchMode = async () => {
 
     switch (keyMode) {
         case "--pug":
-            saveMode(paths.app, paths.keyPug, "pug", true, "html");
+            activeMode(paths.app, paths.keyPug, "pug", "keyPug", true, "html");
             break;
 
         case "--html":
-            saveMode(paths.app, paths.keyPug, "html", false, "pug");
+            activeMode(paths.app, paths.keyPug, "html", "keyPug", false, "pug");
             break;
 
         case "--js":
-            saveMode(paths.app, paths.keyTs, "js", false, "ts");
+            activeMode(paths.app, paths.keyTs, "js", "keyTs", false, "ts");
             break;
 
         case "--ts":
-            saveMode(paths.app, paths.keyTs, "ts", true, "js");
+            activeMode(paths.app, paths.keyTs, "ts", "keyTs", true, "js");
             break;
 
         default:
