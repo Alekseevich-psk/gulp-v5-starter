@@ -9,7 +9,7 @@ import switchMode from "./gulp/switch-mode.mjs";
 import html from "./gulp/html.mjs";
 import pug from "./gulp/pug.mjs";
 import styles from "./gulp/styles.mjs";
-import { scripts, scriptsWatch } from "./gulp/scripts.mjs";
+import { scripts, scriptsWatchTs } from "./gulp/scripts.mjs";
 import serve from "./gulp/serve.mjs";
 import images from "./gulp/images.mjs";
 import video from "./gulp/video.mjs";
@@ -35,7 +35,7 @@ const watchFiles = () => {
 
     gulpIf(
         config.onTs,
-        gulp.watch(paths.scripts.watchTs, gulp.parallel(scriptsWatch)),
+        gulp.watch(paths.scripts.watchTs, gulp.parallel(scriptsWatchTs)),
         gulp.watch(paths.scripts.watch, gulp.parallel(scripts))
     );
 

@@ -55,7 +55,7 @@ const webpackConfig = {
     },
 };
 
-const scriptsWatch = () => {
+const scriptsWatchTs = () => {
     return src(paths.scripts.srcTs)
         .pipe(dest(paths.scripts.dist))
         .on("end", browsersync.reload);
@@ -71,4 +71,4 @@ const scripts = () => {
         .on("end", browsersync.reload);
 };
 
-export { scripts, scriptsWatch };
+export { scripts, scriptsWatchTs };
