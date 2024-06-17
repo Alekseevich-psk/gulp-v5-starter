@@ -1,5 +1,6 @@
 import { hideBin } from "yargs/helpers";
 import { keyPug } from "./key-pug.mjs";
+import { keyTs } from "./key-ts.mjs";
 
 const app = "app/";
 const dist = "dist/";
@@ -13,12 +14,14 @@ export const config = {
         isProd: isProd,
     },
     onPug: keyPug,
+    onTs: keyTs,
 };
 
 export const paths = {
     app: app,
     dist: dist,
     keyPug: "gulp/key-pug.mjs",
+    keyTs: "gulp/key-ts.mjs",
     components: app + "pages/components",
     sections: app + "pages/sections",
     elements: app + "pages/elements",

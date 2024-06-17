@@ -9,8 +9,10 @@
     },
     "scripts": {
         "gulp" : "gulp",
-        "initHTML": "gulp switchPug",
-        "initPUG": "gulp switchPug --pug",
+        "initHTML": "gulp switchMode --html",
+        "initPUG": "gulp switchMode --pug",
+        "initJs": "gulp switchMode --js",
+        "initTs": "gulp switchMode --ts",
         "start": "gulp watch",
         "build": "gulp build --production",
         "zipDist": "gulp zipDist",

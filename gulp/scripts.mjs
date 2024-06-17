@@ -10,11 +10,11 @@ import browsersync from "browser-sync";
 
 // const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const pathFiles = () => (config.onTs ? paths.scripts.srcTs : paths.scripts.src);
 
 const webpackConfig = {
     entry: {
-        // main: "./" + paths.scripts.src,
-        ts: "./" + paths.scripts.srcTs,
+        main: "./" + pathFiles(),
     },
     watch: true,
     watchOptions: {
