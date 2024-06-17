@@ -43,13 +43,13 @@
 
 ## ❗️ Для путей `.js`, `.ts` файлов работают псевдонимы путей
 
-    ```js
-        alias: {
-            Components: path.resolve(__dirname, "../" + paths.components),
-            Sections: path.resolve(__dirname, "../" + paths.sections),
-            Elements: path.resolve(__dirname, "../" + paths.elements),
-        }
-    ```
+```js
+    alias: {
+        Components: path.resolve(__dirname, "../" + paths.components),
+        Sections: path.resolve(__dirname, "../" + paths.sections),
+        Elements: path.resolve(__dirname, "../" + paths.elements),
+    }
+```
     Пример: ```import 'Components/test/test.ts';```
 
 ## :open_file_folder: Файловая структура
