@@ -3,7 +3,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { src, dest } from "gulp";
-import { paths, config } from "./config.mjs";
+import { paths, config } from "./config/config.mjs";
 
 import webpackStream from "webpack-stream";
 import browsersync from "browser-sync";

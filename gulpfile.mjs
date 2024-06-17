@@ -1,6 +1,6 @@
 "use strict";
 
-import { paths, config } from "./gulp/config.mjs";
+import { paths, config } from "./gulp/config/config.mjs";
 
 import gulp from "gulp";
 import gulpIf from "gulp-if";

@@ -1,7 +1,7 @@
 "use strict";
 
 import { src, dest } from "gulp";
-import { paths } from "./config.mjs";
+import { paths } from "./config/config.mjs";
 import gulpPug from "gulp-pug";
 import browsersync from "browser-sync";
 

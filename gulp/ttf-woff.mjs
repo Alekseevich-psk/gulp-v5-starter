@@ -3,7 +3,7 @@
 import fs from "fs";
 import path from "path";
 
-import { paths } from "./config.mjs";
+import { paths } from "./config/config.mjs";
 import ttf2woff from "ttf2woff";
 import ttf2woff2 from "ttf2woff2";
 

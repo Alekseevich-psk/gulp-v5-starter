@@ -1,7 +1,7 @@
 "use strict";
 
 import { src, dest } from "gulp";
-import { paths, config } from "./config.mjs";
+import { paths, config } from "./config/config.mjs";
 
 import gulpSass from "gulp-sass";
 import nodeSass from "node-sass";

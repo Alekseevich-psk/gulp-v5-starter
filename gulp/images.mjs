@@ -1,6 +1,6 @@
 "use strict";
 
-import { paths } from "./config.mjs";
+import { paths } from "./config/config.mjs";
 import { src, dest, watch } from "gulp";
 import browsersync from "browser-sync";
 
