@@ -2,23 +2,24 @@
 
 import { hideBin } from "yargs/helpers";
 import fs from "fs";
-import path from "path";
 import { keyPug } from "./config/key-pug.mjs";
 
 import { paths } from "./config/config.mjs";
 
 const createFolder = (path, nameFolder) => {
-    fs.mkdir(path + "/" + nameFolder.slice(2), (err) => {
+    const dir = path + "/" + nameFolder.slice(2);
+
+    fs.mkdir(dir, (err) => {
         if (err) return console.error(err);
         console.log("Directory created successfully!");
     });
-    return true;
 };
 
 const createFiles = (path, nameFile, modeJs = null) => {
     const file = nameFile.slice(2);
     const pathFolder = `${path}/${file}`;
     const arrayTypeFiles = ["scss"];
+
     keyPug ? arrayTypeFiles.push("pug") : arrayTypeFiles.push("html");
 
     if ((modeJs !== null && modeJs === "--js") || modeJs === "--ts") {
@@ -32,14 +33,20 @@ const createFiles = (path, nameFile, modeJs = null) => {
             arrayTypeFiles.forEach((type) => {
                 const dir = `${path}/${file}/${type === "scss" ? "_" : ""}${file}.${type}`;
                 let fileContent = "";
-                console.log(dir);
 
                 if (type === "scss") {
                     fileContent = `.${file} {}`;
                 }
 
-                fs.writeFile(dir, fileContent, "utf8", (err) => {
-                    if (err) throw err;
+                fs.readFile(dir, "utf8", (error, data) => {
+                    if (error && !data) {
+                        return fs.writeFile(dir, fileContent, "utf8", (err) => {
+                            if (err) throw err;
+                        });
+                    }
+
+                    if (data || data === "")
+                        return console.log(`Error: The ${file}.${type} already exists!`);
                 });
             });
         } else {
