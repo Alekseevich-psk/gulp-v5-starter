@@ -8,7 +8,7 @@
 -   Небольшой вес node_modules (Только необходимое)
 -   Автоматическая генерация
     -   Для создания компонента, элемента или секции `gulp create --component || element || section --test`
-    -   Флаг на добавление файлов `--js`, `--ts`, `gulp create --component --test --ts || --js`
+    -   Флаг на добавление файлов `.js`, `.ts`, `gulp create --component --test --ts || --js`
 -   PUG опционально
     -   (По умолчанию - включен)
 -   TypeScript опционально
