@@ -50,7 +50,7 @@
         Elements: path.resolve(__dirname, "../" + paths.elements),
     }
 ```
-    Пример: ```import 'Components/test/test.ts';```
+Пример: ```import 'Components/test/test.ts';```
 
 ## :open_file_folder: Файловая структура
 
