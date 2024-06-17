@@ -20,7 +20,7 @@
 
 -   Установите [NodeJS](https://nodejs.org/en/)
 -   Установите глобально:
-    -   [Gulp](https://gulpjs.com/): `npm i -g gulp`
+    -   [Gulp](https://gulpjs.com/): `npm i -g gulp gulp-cli`
 -   Скачайте сборку с помощью [Git](https://git-scm.com/downloads): `git clone https://github.com/Alekseevich-psk/gulp-v5-starter.git`
 -   Скачайте необходимые зависимости: `npm i`
 -   Выберите режим работы HTML или PUG `npm run initPUG` или `npm run initHTML`
@@ -95,4 +95,4 @@ gulp-v5-starter
 
 Сообщайте мне о [багах](https://github.com/Alekseevich-psk/gulp-v5-starter/issues)
 
-## ⚠️ Сборка собрана на версии node.js - 18.12.0
+## ⚠️ Сборка собрана на версии node.js - 20.14.0

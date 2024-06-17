@@ -19,7 +19,7 @@
         "ttfToWoff": "gulp ttfToWoff",
         "fontsInStyle": "gulp fontsInStyle"
     },
-    "version": "0.0.2",
+    "version": "0.0.3",
     "devDependencies": {
         "@babel/core": "^7.24.5",
         "@babel/preset-env": "^7.24.5",
