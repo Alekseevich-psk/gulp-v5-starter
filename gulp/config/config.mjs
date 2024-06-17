@@ -20,8 +20,8 @@ export const config = {
 export const paths = {
     app: app,
     dist: dist,
-    keyPug: "gulp/key-pug.mjs",
-    keyTs: "gulp/key-ts.mjs",
+    keyPug: "gulp/config/key-pug.mjs",
+    keyTs: "gulp/config/key-ts.mjs",
     components: app + "pages/components",
     sections: app + "pages/sections",
     elements: app + "pages/elements",
