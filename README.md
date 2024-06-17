@@ -41,6 +41,17 @@
 -   Запускаем конвертацию в формат .woff(.woff2) `npm run ttfToWoff`
 -   Подключаем шрифты в mixin scss `"app/styles/fonts.scss"` командой `npm run fontsInStyle`
 
+## ❗️ Для путей `.js`, `.ts` файлов работают псевдонимы путей
+
+    ```js
+        alias: {
+            Components: path.resolve(__dirname, "../" + paths.components),
+            Sections: path.resolve(__dirname, "../" + paths.sections),
+            Elements: path.resolve(__dirname, "../" + paths.elements),
+        }
+    ```
+    Пример: ```import 'Components/test/test.ts';```
+
 ## :open_file_folder: Файловая структура
 
 ```
