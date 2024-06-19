@@ -25,6 +25,7 @@ gulp.task(zipDist);
 gulp.task(ttfToWoff);
 gulp.task(fontsInStyle);
 gulp.task(create);
+gulp.task(styles);
 
 const watchFiles = () => {
     gulpIf(
