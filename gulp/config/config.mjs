@@ -76,8 +76,8 @@ export const paths = {
 
 export const alias = {
     scss: {
-        "@Section": "./../pages/sections",
-        "@Element": "./../pages/elements",
+        "@Sections": "./../pages/sections",
+        "@Elements": "./../pages/elements",
     },
     js: {
         Components: path.resolve(__dirname, "../" + paths.components),
