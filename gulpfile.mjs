@@ -26,6 +26,10 @@ gulp.task(ttfToWoff);
 gulp.task(fontsInStyle);
 gulp.task(create);
 gulp.task(styles);
+gulp.task(scripts);
+gulp.task(pug);
+gulp.task(images);
+gulp.task(fonts);
 
 const watchFiles = () => {
     gulpIf(
