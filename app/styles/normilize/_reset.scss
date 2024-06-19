@@ -227,3 +227,9 @@ select,
 a {
     -webkit-tap-highlight-color: transparent;
 }
+
+input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
