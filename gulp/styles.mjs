@@ -1,5 +1,7 @@
 "use strict";
 
+import sassAlias from "./modules/sass-alias.mjs";
+
 import { src, dest } from "gulp";
 import { paths, config } from "./config/config.mjs";
 
@@ -17,6 +19,7 @@ const scss = gulpSass(nodeSass);
 
 const styles = () => {
     return src(paths.styles.src)
+        .pipe(sassAlias())
         .pipe(gulpIf(config.mode.isDev, sourcemaps.init()))
         .pipe(scss())
         .pipe(groupMedia())

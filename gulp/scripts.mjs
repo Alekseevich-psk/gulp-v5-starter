@@ -1,15 +1,11 @@
 "use strict";
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 import { src, dest } from "gulp";
-import { paths, config } from "./config/config.mjs";
+import { paths, config, alias } from "./config/config.mjs";
 
 import webpackStream from "webpack-stream";
 import browsersync from "browser-sync";
 
-// const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const pathFiles = () => (config.onTs ? paths.scripts.srcTs : paths.scripts.src);
 
 const webpackConfig = {
@@ -28,11 +24,7 @@ const webpackConfig = {
         publicPath: "/",
     },
     resolve: {
-        alias: {
-            Components: path.resolve(__dirname, "../" + paths.components),
-            Sections: path.resolve(__dirname, "../" + paths.sections),
-            Elements: path.resolve(__dirname, "../" + paths.elements),
-        },
+        alias: alias.js,
     },
     module: {
         rules: [

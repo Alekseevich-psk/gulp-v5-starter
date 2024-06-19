@@ -1,3 +1,6 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
 import { hideBin } from "yargs/helpers";
 import { keyPug } from "./key-pug.mjs";
 import { keyTs } from "./key-ts.mjs";
@@ -5,6 +8,7 @@ import { keyTs } from "./key-ts.mjs";
 const app = "app/";
 const dist = "dist/";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = hideBin(process.argv)[1] === "--production";
 const isDev = !isProd;
 
@@ -67,5 +71,17 @@ export const paths = {
         src: app + "images/**/*.{jpg,png,svg,gif,ico,webp}",
         watch: app + "images/**/*.{jpg,png,svg,gif,ico,webp}",
         dist: dist + "images/",
+    },
+};
+
+export const alias = {
+    scss: {
+        "@Section": "./../pages/sections",
+        "@Element": "./../pages/elements",
+    },
+    js: {
+        Components: path.resolve(__dirname, "../" + paths.components),
+        Sections: path.resolve(__dirname, "../" + paths.sections),
+        Elements: path.resolve(__dirname, "../" + paths.elements),
     },
 };
