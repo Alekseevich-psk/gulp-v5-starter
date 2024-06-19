@@ -80,8 +80,8 @@ export const alias = {
         "@Elements": "./../pages/elements",
     },
     js: {
-        Components: path.resolve(__dirname, "../" + paths.components),
-        Sections: path.resolve(__dirname, "../" + paths.sections),
-        Elements: path.resolve(__dirname, "../" + paths.elements),
+        Components: path.resolve(__dirname, "../../" + paths.components),
+        Sections: path.resolve(__dirname, "../../" + paths.sections),
+        Elements: path.resolve(__dirname, "../../" + paths.elements),
     },
 };
