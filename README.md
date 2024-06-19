@@ -42,9 +42,10 @@
 -   Запускаем конвертацию в формат .woff(.woff2) `npm run ttfToWoff`
 -   Подключаем шрифты в mixin scss `"app/styles/fonts.scss"` командой `npm run fontsInStyle`
 
-## ❗️ Для путей `.scss`,`.ts`,`.js` файлов работают псевдонимы
+## ❗️ Alias
 
-Задавать по адресу: ```./gulp/config/config.mjs```
+-   Для путей `.scss`,`.ts`,`.js` файлов работают псевдонимы
+-   Задавать по адресу: `./gulp/config/config.mjs`
 
 ```js
     scss: {
@@ -57,9 +58,10 @@
         Elements: path.resolve(__dirname, "../" + paths.elements),
     },
 ```
+
 Примеры:
-```import '@Element/test/test.ts';```
-```import 'Components/test/test.ts';```
+`import '@Element/test/test.ts';`
+`import 'Components/test/test.ts';`
 
 ## :open_file_folder: Файловая структура
 
