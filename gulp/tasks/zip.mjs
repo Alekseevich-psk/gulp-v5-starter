@@ -1,7 +1,7 @@
 "use strict";
 
 import { src, dest } from "gulp";
-import { paths } from "./config/config.mjs";
+import { paths } from "../config/config.mjs";
 import zip from "gulp-zip";
 
 const zipDist = () => {

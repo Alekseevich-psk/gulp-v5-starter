@@ -1,5 +1,5 @@
 import browsersync from "browser-sync";
-import { paths } from "./config/config.mjs";
+import { paths } from "../config/config.mjs";
 
 const browserSync = () => {
     browsersync.init({

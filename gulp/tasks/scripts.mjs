@@ -1,7 +1,7 @@
 "use strict";
 
 import { src, dest } from "gulp";
-import { paths, config, alias } from "./config/config.mjs";
+import { paths, config, alias } from "../config/config.mjs";
 
 import webpackStream from "webpack-stream";
 import browsersync from "browser-sync";

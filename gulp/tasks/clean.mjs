@@ -1,6 +1,6 @@
 "use strict";
 
-import { paths } from "./config/config.mjs";
+import { paths } from "../config/config.mjs";
 import { deleteAsync } from "del";
 
 const clean = () => {

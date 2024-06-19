@@ -1,7 +1,7 @@
 "use strict";
 
 import { src, dest } from "gulp";
-import { paths } from "./config/config.mjs";
+import { paths } from "../config/config.mjs";
 
 const video = () => {
     return src(paths.video.src, { encoding: false })

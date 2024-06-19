@@ -3,7 +3,7 @@
 import { hideBin } from "yargs/helpers";
 import fs from "fs";
 import path from "path";
-import { paths, config } from "./config/config.mjs";
+import { paths, config } from "../config/config.mjs";
 
 function cb() {}
 

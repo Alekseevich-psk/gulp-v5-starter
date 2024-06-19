@@ -2,9 +2,9 @@
 
 import { hideBin } from "yargs/helpers";
 import fs from "fs";
-import { keyPug } from "./config/key-pug.mjs";
+import { keyPug } from "../config/key-pug.mjs";
 
-import { paths } from "./config/config.mjs";
+import { paths } from "../config/config.mjs";
 
 const createFolder = (path, nameFolder) => {
     const dir = path + "/" + nameFolder.slice(2);

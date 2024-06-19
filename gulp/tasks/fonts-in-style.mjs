@@ -3,7 +3,7 @@
 import fs from "fs";
 import path from "path";
 
-import { paths } from "./config/config.mjs";
+import { paths } from "../config/config.mjs";
 
 function cb() {}
 
