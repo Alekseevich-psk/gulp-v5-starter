@@ -42,7 +42,7 @@
 -   Запускаем конвертацию в формат .woff(.woff2) `npm run ttfToWoff`
 -   Подключаем шрифты в mixin scss `"app/styles/fonts.scss"` командой `npm run fontsInStyle`
 
-## ❗️ Для путей `.scss`,`.ts`,`.js` файлов работают псевдонимы путей
+## ❗️ Для путей `.scss`,`.ts`,`.js` файлов работают псевдонимы
 
 Задавать по адресу: ```./gulp/config/config.mjs```
 
