@@ -72,6 +72,11 @@ export const paths = {
         watch: app + "images/**/*.{jpg,png,svg,gif,ico,webp}",
         dist: dist + "images/",
     },
+    svgSprite: {
+        src: app + "svg/**/*.svg",
+        watch: app + "svg/**/*.svg",
+        dist: dist + "sprite/",
+    },
 };
 
 export const alias = {

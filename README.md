@@ -14,6 +14,10 @@
     -   (По умолчанию - включен)
 -   TypeScript опционально
     -   (По умолчанию - включен)
+-   Svg sprite
+    -   `<svg>
+            <use href="./sprite/sprite.svg#test-1"></use>
+        </svg>`
 -   Импорт `.ts .js .mjs`
 -   Swiper включен в сборку
 
@@ -74,6 +78,7 @@ gulp-v5-starter
 │   ├── pages
 │   ├── scripts
 │   ├── styles
+│   ├── svg
 │   └── video
 ├── dist
 ├── package.json
