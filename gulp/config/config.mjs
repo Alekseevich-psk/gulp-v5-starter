@@ -19,6 +19,7 @@ export const config = {
     },
     onPug: keyPug,
     onTs: keyTs,
+    scriptsFileNameOutput: "scripts.js",
 };
 
 export const paths = {
@@ -53,8 +54,7 @@ export const paths = {
     scripts: {
         src: app + "scripts/main.js",
         srcTs: app + "scripts/main.ts",
-        watch: app + "/**/*.{js,mjs}",
-        watchTs: app + "/**/*.ts",
+        watch: app + "/**/*.{js,mjs,ts}",
         dist: dist + "js/",
     },
     fonts: {

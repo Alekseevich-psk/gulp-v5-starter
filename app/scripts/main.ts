@@ -1,1 +1,1 @@
-import './swiper.ts';
+console.log('success - ts');

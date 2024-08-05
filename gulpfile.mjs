@@ -9,7 +9,7 @@ import switchMode from "./gulp/tasks/switch-mode.mjs";
 import html from "./gulp/tasks/html.mjs";
 import pug from "./gulp/tasks/pug.mjs";
 import styles from "./gulp/tasks/styles.mjs";
-import { scripts, scriptsWatchTs } from "./gulp/tasks/scripts.mjs";
+import scripts from "./gulp/tasks/scripts.mjs";
 import serve from "./gulp/tasks/serve.mjs";
 import images from "./gulp/tasks/images.mjs";
 import video from "./gulp/tasks/video.mjs";
@@ -21,33 +21,17 @@ import clean from "./gulp/tasks/clean.mjs";
 import create from "./gulp/tasks/create.mjs";
 import svgSprite from "./gulp/tasks/svgSprite.mjs";
 
-gulp.task(switchMode);
-gulp.task(zipDist);
-gulp.task(ttfToWoff);
-gulp.task(fontsInStyle);
-gulp.task(create);
-gulp.task(styles);
-gulp.task(scripts);
-gulp.task(pug);
-gulp.task(images);
-gulp.task(fonts);
-gulp.task(svgSprite);
-
 const watchFiles = () => {
+    
     gulpIf(
         config.onPug,
         gulp.watch(paths.pug.watch, gulp.parallel(pug)),
         gulp.watch(paths.html.watch, gulp.parallel(html))
     );
 
-    gulpIf(
-        config.onTs,
-        gulp.watch(paths.scripts.watchTs, gulp.parallel(scriptsWatchTs)),
-        gulp.watch(paths.scripts.watch, gulp.parallel(scripts))
-    );
-
     gulp.watch(paths.pug.watch, gulp.parallel(pug));
     gulp.watch(paths.styles.watch, gulp.parallel(styles));
+    gulp.watch(paths.scripts.watch, gulp.parallel(scripts));
     gulp.watch(paths.images.watch, gulp.parallel(images));
     gulp.watch(paths.svgSprite.watch, gulp.parallel(svgSprite));
     gulp.watch(paths.video.watch, gulp.parallel(video));
@@ -61,4 +45,16 @@ export const build = gulp.series(
 );
 
 export const watch = gulp.parallel(build, watchFiles, serve);
+
+gulp.task(switchMode);
+gulp.task(zipDist);
+gulp.task(ttfToWoff);
+gulp.task(fontsInStyle);
+gulp.task(create);
+gulp.task(styles);
+gulp.task(scripts);
+gulp.task(pug);
+gulp.task(images);
+gulp.task(fonts);
+gulp.task(svgSprite);
 gulp.task("default", watch);

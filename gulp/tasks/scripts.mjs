@@ -6,11 +6,11 @@ import { paths, config, alias } from "../config/config.mjs";
 import webpackStream from "webpack-stream";
 import browsersync from "browser-sync";
 
-const pathFiles = () => (config.onTs ? paths.scripts.srcTs : paths.scripts.src);
+const pathFiles = config.onTs ? paths.scripts.srcTs : paths.scripts.src;
 
-const webpackConfig = {
+export const webpackConfig = {
     entry: {
-        main: "./" + pathFiles(),
+        main: "./" + pathFiles,
     },
     watch: true,
     watchOptions: {
@@ -20,7 +20,7 @@ const webpackConfig = {
     },
     mode: config.mode.isDev ? "development" : "production",
     output: {
-        filename: "scripts.js",
+        filename: config.scriptsFileNameOutput,
         publicPath: "/",
     },
     resolve: {
@@ -47,20 +47,14 @@ const webpackConfig = {
     },
 };
 
-const scriptsWatchTs = () => {
-    return src(paths.scripts.srcTs)
-        .pipe(dest(paths.scripts.dist))
-        .on("end", browsersync.reload);
-};
-
 const scripts = () => {
-    return src(paths.scripts.srcTs)
+    return src(pathFiles)
         .pipe(webpackStream(webpackConfig), null, function (err, stats) {
             console.log("err " + err);
             console.log("stats " + stats);
         })
         .pipe(dest(paths.scripts.dist))
-        .on("end", browsersync.reload);
+        .pipe(browsersync.reload({ stream: true }));
 };
 
-export { scripts, scriptsWatchTs };
+export default scripts;
