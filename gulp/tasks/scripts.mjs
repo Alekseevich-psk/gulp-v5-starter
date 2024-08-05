@@ -47,12 +47,21 @@ export const webpackConfig = {
     },
 };
 
+const tsProject = ts.createProject({
+    noImplicitAny: true,
+    module: "es6",
+    target: "es5",
+    allowJs: true,
+    moduleResolution: "node",
+});
+
 const scripts = () => {
     return src(pathFiles)
         .pipe(webpackStream(webpackConfig), null, function (err, stats) {
             console.log("err " + err);
             console.log("stats " + stats);
         })
+        .pipe(tsProject())
         .pipe(dest(paths.scripts.dist))
         .pipe(browsersync.reload({ stream: true }));
 };
