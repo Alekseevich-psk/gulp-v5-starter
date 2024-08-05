@@ -12,33 +12,47 @@ function getStyleFont(fontName) {
     return "Normal";
 }
 
-function getWeightFont(fontName) {
+function getWeightFont(font) {
+    const fontName = font.toLowerCase().replace("-", "");
+
     switch (true) {
-        case fontName.toLowerCase().indexOf("thin") > 0:
+        case fontName.indexOf("thin") > 0:
             return "100";
 
-        case fontName.toLowerCase().indexOf("extralight") > 0:
+        case fontName.indexOf("extralight") > 0:
             return "200";
 
-        case fontName.toLowerCase().indexOf("light") > 0:
+        case fontName.indexOf("ultralight") > 0:
+            return "200";
+
+        case fontName.indexOf("light") > 0:
             return "300";
 
-        case fontName.toLowerCase().indexOf("regular") > 0:
+        case fontName.indexOf("regular") > 0:
             return "400";
 
-        case fontName.toLowerCase().indexOf("medium") > 0:
+        case fontName.indexOf("medium") > 0:
             return "500";
 
-        case fontName.toLowerCase().indexOf("semibold") > 0:
+        case fontName.indexOf("semibold") > 0:
             return "600";
 
-        case fontName.toLowerCase().indexOf("bold") > 0:
+        case fontName.indexOf("demi") > 0:
+            return "600";
+
+        case fontName.indexOf("bold") > 0:
             return "700";
 
-        case fontName.toLowerCase().indexOf("extrabold") > 0:
+        case fontName.indexOf("extrabold") > 0:
             return "800";
 
-        case fontName.toLowerCase().indexOf("black") > 0:
+        case fontName.indexOf("ultrabold") > 0:
+            return "800";
+
+        case fontName.indexOf("black") > 0:
+            return "900";
+
+        case fontName.indexOf("heavy") > 0:
             return "900";
 
         default:
