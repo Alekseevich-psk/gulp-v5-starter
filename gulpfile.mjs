@@ -19,7 +19,8 @@ import ttfToWoff from "./gulp/tasks/ttf-woff.mjs";
 import fontsInStyle from "./gulp/tasks/fonts-in-style.mjs";
 import clean from "./gulp/tasks/clean.mjs";
 import create from "./gulp/tasks/create.mjs";
-import svgSprite from "./gulp/tasks/svgSprite.mjs";
+import svgSprite from "./gulp/tasks/svg-sprite.mjs";
+import createJsConfig from "./gulp/tasks/create-js-config.mjs";
 
 const watchFiles = () => {
     
@@ -40,6 +41,7 @@ const watchFiles = () => {
 
 export const build = gulp.series(
     clean,
+    createJsConfig,
     gulpIf(config.onPug, pug, html),
     gulp.parallel(styles, video, fonts, scripts, svgSprite, images)
 );
@@ -47,6 +49,7 @@ export const build = gulp.series(
 export const watch = gulp.parallel(build, watchFiles, serve);
 
 gulp.task(switchMode);
+gulp.task(createJsConfig,);
 gulp.task(zipDist);
 gulp.task(ttfToWoff);
 gulp.task(fontsInStyle);

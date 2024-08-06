@@ -12,6 +12,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = hideBin(process.argv)[1] === "--production";
 const isDev = !isProd;
 
+const aliasSections = "Sections";
+const aliasComponents = "Components";
+const aliasElements = "Elements";
+
 export const config = {
     mode: {
         isDev: isDev,
@@ -25,6 +29,8 @@ export const config = {
 export const paths = {
     app: app,
     dist: dist,
+    jsConfig: "./jsconfig.json",
+    tsConfig: "./tsconfig.json",
     keyPug: "gulp/config/key-pug.mjs",
     keyTs: "gulp/config/key-ts.mjs",
     components: app + "pages/components",
@@ -80,14 +86,23 @@ export const paths = {
 };
 
 export const alias = {
-    scss: {
-        "@Sections": "./../pages/sections",
-        "@Components": "./../pages/components",
-        "@Elements": "./../pages/elements",
-    },
-    js: {
-        "@Sections": path.resolve(__dirname, "../../" + paths.sections),
-        "@Components": path.resolve(__dirname, "../../" + paths.components),
-        "@Elements": path.resolve(__dirname, "../../" + paths.elements),
+    [aliasSections]: "../../" + paths.sections,
+    [aliasComponents]: "../../" + paths.components,
+    [aliasElements]: "../../" + paths.elements,
+};
+
+export const jsConfig = {
+    compilerOptions: {
+        moduleResolution: "node",
+        noImplicitAny: true,
+        module: "es6",
+        target: "es5",
+        allowJs: true,
+        baseUrl: "./",
+        paths: {
+            [aliasSections + "/*"]: [paths.sections + "/*"],
+            [aliasComponents + "/*"]: [paths.components + "/*"],
+            [aliasElements + "/*"]: [paths.elements + "/*"],
+        },
     },
 };

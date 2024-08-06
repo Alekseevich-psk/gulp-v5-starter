@@ -24,7 +24,8 @@ export const webpackConfig = {
         publicPath: "/",
     },
     resolve: {
-        alias: alias.js,
+        alias: alias,
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".mjs"],
     },
     module: {
         rules: [

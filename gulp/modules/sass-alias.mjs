@@ -12,17 +12,14 @@ const sassAlias = () => {
         }
 
         if (file.isStream()) {
-            this.emit(
-                "error",
-                new PluginError("module-sass-alias", "Streaming not supported")
-            );
+            this.emit("error", new PluginError("module-sass-alias", "Streaming not supported"));
             return cb();
         }
 
         try {
             let content = file.contents.toString();
 
-            for (const [key, value] of Object.entries(alias.scss)) {
+            for (const [key, value] of Object.entries(alias)) {
                 content = content.replaceAll(key, value);
             }
 
