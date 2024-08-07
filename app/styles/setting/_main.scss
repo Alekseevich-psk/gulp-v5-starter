@@ -43,18 +43,10 @@ a {
 
 .container {
     position: relative;
-    width: 1248px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 32px;
     font-size: 16px;
-
-    @media (max-width: 1280px) {
-        width: 992px;
-    }
-
-    @media (max-width: 1024px) {
-        width: 768px;
-    }
 
     @media (max-width: 768px) {
         width: 100%;
