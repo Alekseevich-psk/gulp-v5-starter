@@ -9,7 +9,17 @@ const app = "app/";
 const dist = "dist/";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const isProd = hideBin(process.argv)[1] === "--production";
+const isProd = (function () {
+    const startConfig = hideBin(process.argv);
+    for (const key in startConfig) {
+        if (Object.prototype.hasOwnProperty.call(startConfig, key)) {
+            const element = startConfig[key];
+            if (element === "--production") return true;
+            return false;
+        }
+    }
+})();
+
 const isDev = !isProd;
 
 const aliasSections = "Sections";
@@ -74,7 +84,7 @@ export const paths = {
         dist: app + "fonts/",
     },
     images: {
-        src: app + "images/**/*.{jpg,png,svg,gif,ico,webp}",
+        src: app + "images/**/*.{jpg,png,svg,gif,ico,webp,jpeg}",
         watch: app + "images/**/*.{jpg,png,svg,gif,ico,webp}",
         dist: dist + "images/",
     },
