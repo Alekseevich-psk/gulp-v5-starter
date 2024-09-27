@@ -24,8 +24,6 @@ const isProd = (function () {
 
 const isDev = !isProd;
 
-const isDev = !isProd;
-
 const aliasSections = "Sections";
 const aliasComponents = "Components";
 const aliasElements = "Elements";
