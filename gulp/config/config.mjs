@@ -11,14 +11,18 @@ const dist = "dist/";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = (function () {
     const startConfig = hideBin(process.argv);
+
     for (const key in startConfig) {
         if (Object.prototype.hasOwnProperty.call(startConfig, key)) {
             const element = startConfig[key];
-            if (element === "--production") return true;
-            return false;
+            if (element === "--production" || element === "build") return true;
         }
     }
+
+    return false;
 })();
+
+const isDev = !isProd;
 
 const isDev = !isProd;
 
