@@ -1,0 +1,1 @@
+{"compilerOptions":{"moduleResolution":"node","noImplicitAny":true,"module":"es6","target":"es5","allowJs":true,"baseUrl":"./","paths":{"Sections/*":["app/pages/sections/*"],"Components/*":["app/pages/components/*"],"Elements/*":["app/pages/elements/*"]}}}

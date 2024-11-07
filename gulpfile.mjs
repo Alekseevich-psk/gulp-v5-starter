@@ -21,6 +21,7 @@ import clean from "./gulp/tasks/clean.mjs";
 import create from "./gulp/tasks/create.mjs";
 import svgSprite from "./gulp/tasks/svg-sprite.mjs";
 import createJsConfig from "./gulp/tasks/create-js-config.mjs";
+import activeAssets from "./gulp/tasks/active-assets.mjs";
 
 const watchFiles = () => {
     
@@ -34,6 +35,7 @@ const watchFiles = () => {
     gulp.watch(paths.styles.watch, gulp.parallel(styles));
     gulp.watch(paths.scripts.watch, gulp.parallel(scripts));
     gulp.watch(paths.images.watch, gulp.parallel(images));
+    gulp.watch(paths.assets.watch, gulp.parallel(activeAssets));
     gulp.watch(paths.svgSprite.watch, gulp.parallel(svgSprite));
     gulp.watch(paths.video.watch, gulp.parallel(video));
     gulp.watch(paths.fonts.watch, gulp.parallel(fonts));
@@ -43,7 +45,7 @@ export const build = gulp.series(
     clean,
     createJsConfig,
     gulpIf(config.onPug, pug, html),
-    gulp.parallel(styles, video, fonts, scripts, svgSprite, images)
+    gulp.parallel(styles, video, fonts, activeAssets, scripts, svgSprite, images)
 );
 
 export const watch = gulp.parallel(build, watchFiles, serve);
@@ -60,4 +62,5 @@ gulp.task(pug);
 gulp.task(images);
 gulp.task(fonts);
 gulp.task(svgSprite);
+gulp.task(activeAssets);
 gulp.task("default", watch);

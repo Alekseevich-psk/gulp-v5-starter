@@ -79,6 +79,7 @@ function includeFont(fontName) {
 }
 
 const fontsInStyle = async () => {
+    
     fs.truncate(paths.styles.fonts, 0, function () {
         console.log("fs.truncate - done");
     });

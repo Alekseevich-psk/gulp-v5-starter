@@ -90,6 +90,11 @@ export const paths = {
         watch: app + "images/**/*.{jpg,png,svg,gif,ico,webp}",
         dist: dist + "images/",
     },
+    assets: {
+        src: app + "assets/**/*",
+        watch: app + "assets/**/*",
+        dist: dist + "assets/",
+    },
     svgSprite: {
         src: app + "svg/**/*.svg",
         watch: app + "svg/**/*.svg",

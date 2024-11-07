@@ -1,5 +1,6 @@
 "use strict";
 
+import fs from "fs";
 import { paths } from "../config/config.mjs";
 import { src, dest, watch } from "gulp";
 import svgMin from "gulp-svgmin";
@@ -7,6 +8,8 @@ import sprite from "gulp-svg-sprite";
 import browsersync from "browser-sync";
 
 const svgSprite = () => {
+    if (!fs.existsSync(paths.svgSprite.src.replace("**/*", ""))) return;
+    
     return src(paths.svgSprite.src)
         .pipe(
             svgMin({
