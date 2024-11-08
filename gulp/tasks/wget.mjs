@@ -39,7 +39,7 @@ const wget = async () => {
                         return (
                             str.substring(0, index + keyword.length) +
                             insert +
-                            str.substring(index)
+                            str.substring(index + keyword.length)
                         );
                     }
 
