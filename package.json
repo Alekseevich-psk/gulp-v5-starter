@@ -54,10 +54,10 @@
         "typescript": "^5.4.5",
         "webpack": "^5.91.0",
         "webpack-stream": "^7.0.0",
-        "yargs": "^17.7.2"
+        "yargs": "^17.7.2",
+        "website-scraper": "^5.3.1"
     },
     "dependencies": {
-        "node-wget-js": "^1.0.1",
-        "swiper": "^11.1.1"
+        "swiper": "^11.1.1",
     }
 }
