@@ -23,8 +23,9 @@ import svgSprite from "./gulp/tasks/svg-sprite.mjs";
 import createJsConfig from "./gulp/tasks/create-js-config.mjs";
 import activeAssets from "./gulp/tasks/active-assets.mjs";
 
+import wget from "./gulp/tasks/wget.mjs";
+
 const watchFiles = () => {
-    
     gulpIf(
         config.onPug,
         gulp.watch(paths.pug.watch, gulp.parallel(pug)),
@@ -45,13 +46,21 @@ export const build = gulp.series(
     clean,
     createJsConfig,
     gulpIf(config.onPug, pug, html),
-    gulp.parallel(styles, video, fonts, activeAssets, scripts, svgSprite, images)
+    gulp.parallel(
+        styles,
+        video,
+        fonts,
+        activeAssets,
+        scripts,
+        svgSprite,
+        images
+    )
 );
 
 export const watch = gulp.parallel(build, watchFiles, serve);
 
 gulp.task(switchMode);
-gulp.task(createJsConfig,);
+gulp.task(createJsConfig);
 gulp.task(zipDist);
 gulp.task(ttfToWoff);
 gulp.task(fontsInStyle);
@@ -63,4 +72,5 @@ gulp.task(images);
 gulp.task(fonts);
 gulp.task(svgSprite);
 gulp.task(activeAssets);
+gulp.task(wget);
 gulp.task("default", watch);

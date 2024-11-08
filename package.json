@@ -19,7 +19,7 @@
         "ttfToWoff": "gulp ttfToWoff",
         "fontsInStyle": "gulp fontsInStyle"
     },
-    "version": "0.0.5",
+    "version": "0.0.6",
     "devDependencies": {
         "@babel/core": "^7.24.5",
         "@babel/preset-env": "^7.24.5",
@@ -57,6 +57,7 @@
         "yargs": "^17.7.2"
     },
     "dependencies": {
+        "node-wget-js": "^1.0.1",
         "swiper": "^11.1.1"
     }
 }

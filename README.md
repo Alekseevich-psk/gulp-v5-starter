@@ -5,6 +5,7 @@
 -   Gulp v5
 -   Webpack для обработки js и ts
 -   Единый `config.mjs`
+-   WGET
 -   Псевдонимы путей для `.scss`,`.ts`,`.js` файлов
 -   Небольшой вес node_modules (Только необходимое)
 -   Автоматическая генерация
@@ -95,6 +96,13 @@ gulp-v5-starter
 -   `gulp switchMode --pug` или `npm run switchMode --pug` - Pug режим
 -   `gulp switchMode --js` или `npm run switchMode --js` - javaScript режим
 -   `gulp switchMode --ts` или `npm run switchMode --ts` - typeScript режим
+
+## ❗️ WGET
+
+-   Сверх простой асинхронный поиск удаленных файлов по протоколам http или https, вдохновленный wget js 
+```js
+    gulp wget --url
+```
 
 ## :keyboard: Команды
 

@@ -95,6 +95,11 @@ export const paths = {
         watch: app + "assets/**/*",
         dist: dist + "assets/",
     },
+    wget: {
+        src: app + "wget/**/*",
+        watch: app + "wget/**/*",
+        dist: dist + "wget/",
+    },
     svgSprite: {
         src: app + "svg/**/*.svg",
         watch: app + "svg/**/*.svg",
