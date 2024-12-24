@@ -5,9 +5,12 @@ import { hideBin } from "yargs/helpers";
 import { src, dest } from "gulp";
 import { paths } from "../config/config.mjs";
 import browsersync from "browser-sync";
+import removeInnerBraces from "../snippets/removeInnerBraces.mjs";
 
 export const wgetFiles = async () => {
-    if (!fs.existsSync(paths.wget.src.replace("**/*", ""))) return;
+    if (!fs.existsSync(removeInnerBraces(paths.wget.src))) {
+        return console.log("no wget folder");
+    }
 
     return src(paths.wget.src, { encoding: false })
         .pipe(dest(paths.wget.dist))
@@ -17,6 +20,7 @@ export const wgetFiles = async () => {
 export const wget = async () => {
     const pathToFolder = paths.wget.src.replace("**/*", "");
     const url = hideBin(process.argv)[1].slice(2);
+    
     const options = {
         urls: [url],
         directory: pathToFolder,
@@ -24,7 +28,7 @@ export const wget = async () => {
     };
 
     fs.rmSync(pathToFolder, { recursive: true, force: true });
-    
+
     return scrape(options).then((result) => {
         console.log("wget - success!");
     });
