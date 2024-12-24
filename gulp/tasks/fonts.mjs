@@ -6,7 +6,9 @@ import { paths } from "../config/config.mjs";
 import removeInnerBraces from "../snippets/removeInnerBraces.mjs";
 
 const fonts = async () => {
-    if (!fs.existsSync(removeInnerBraces(paths.fonts.src))) return;
+    if (!fs.existsSync(removeInnerBraces(paths.fonts.src))) {
+        return console.log("no fonts folder");
+    }
 
     return src(paths.fonts.src, { encoding: false }).pipe(dest(paths.fonts.dist));
 };

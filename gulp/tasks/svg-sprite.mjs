@@ -6,10 +6,13 @@ import { src, dest, watch } from "gulp";
 import svgMin from "gulp-svgmin";
 import sprite from "gulp-svg-sprite";
 import browsersync from "browser-sync";
+import removeInnerBraces from "../snippets/removeInnerBraces.mjs";
 
 const svgSprite = () => {
-    if (!fs.existsSync(paths.svgSprite.src.replace("**/*", ""))) return;
-    
+    if (!fs.existsSync(removeInnerBraces(paths.svgSprite.src))) {
+        return console.log("no svg sprite folder");
+    }
+
     return src(paths.svgSprite.src)
         .pipe(
             svgMin({
