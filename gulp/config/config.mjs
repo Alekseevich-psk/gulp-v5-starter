@@ -1,14 +1,16 @@
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+// import path from "node:path";
+// import { fileURLToPath } from "node:url";
+// const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 import { hideBin } from "yargs/helpers";
 import { keyPug } from "./key-pug.mjs";
 import { keyTs } from "./key-ts.mjs";
 
+import TerserPlugin from "terser-webpack-plugin";
+
 const app = "app/";
 const dist = "dist/";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = (function () {
     const startConfig = hideBin(process.argv);
 
@@ -107,6 +109,8 @@ export const paths = {
     },
 };
 
+export const pathFiles = config.onTs ? paths.scripts.srcTs : paths.scripts.src;
+
 export const alias = {
     [aliasSections]: "../../" + paths.sections,
     [aliasComponents]: "../../" + paths.components,
@@ -126,5 +130,51 @@ export const jsConfig = {
             [aliasComponents + "/*"]: [paths.components + "/*"],
             [aliasElements + "/*"]: [paths.elements + "/*"],
         },
+    },
+};
+
+export const webpackConfig = {
+    entry: {
+        main: "./" + pathFiles,
+    },
+    watch: true,
+    watchOptions: {
+        ignored: /node_modules/,
+        followSymlinks: true,
+        stdin: false,
+    },
+    mode: config.mode.isDev ? "development" : "production",
+    output: {
+        filename: config.scriptsFileNameOutput,
+        publicPath: "/",
+    },
+    resolve: {
+        alias: alias,
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".mjs"],
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                terserOptions: {
+                    keep_fnames: true,
+                    keep_classnames: true,
+                    compress: {
+                        keep_classnames: true,
+                        keep_fnames: true,
+                    },
+                    mangle: true,
+                },
+            }),
+        ],
+    },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: "ts-loader",
+                exclude: /node_modules/,
+            },
+        ],
     },
 };
