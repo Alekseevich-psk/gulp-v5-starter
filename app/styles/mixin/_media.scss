@@ -28,7 +28,7 @@ $aboveHD: 1921px;
     }
 }
 
-@mixin aboveTable {
+@mixin aboveTablet {
     @media (min-width: $aboveTable) {
         @content;
     }
