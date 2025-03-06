@@ -208,13 +208,8 @@ img {
     pointer-events: none;
 }
 
-html,
-body,
-img,
-div,
-a,
-table {
-    image-rendering: -webkit-optimize-contrast !important;
+* {
+    -webkit-tap-highlight-color: transparent;
 }
 
 sup {
