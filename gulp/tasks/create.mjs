@@ -9,7 +9,7 @@ import { paths } from "../config/config.mjs";
 const createFolder = (path, nameFolder) => {
     const dir = path + "/" + nameFolder.slice(2);
 
-    fs.mkdir(dir, (err) => {
+    fs.mkdirSync(dir, (err) => {
         if (err) return console.error(err);
         console.log("Directory created successfully!");
     });
